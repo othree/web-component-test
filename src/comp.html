@@ -1,0 +1,33 @@
+<element name="wth">
+    <template class="wth">
+        <div class="what">What</div>
+        <div class="hell">Hell</div>
+
+        <style scoped>
+            @host {
+                * {
+                    border: none;
+                }
+            }
+            div {
+                border: 1px solid #333;
+                padding: 4px;
+                float: left;
+            }
+            .hell.active {
+                color: red;
+            }
+        </style>
+    </template>
+
+    <script>
+        var hell = host.querySelector('.hell');
+        host.querySelector('.what').onclick = function () {
+            if (/active/.test(hell.className)) {
+                hell.className = '';
+            } else {
+                hell.className = 'active';
+            }
+        };
+    </script>
+</element>
