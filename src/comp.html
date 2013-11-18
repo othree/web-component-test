@@ -3,20 +3,41 @@
         @host {
             * {
                 border: none;
+                display: inline-block;
             }
         }
-        div {
+        h1 {
+            font-size: 16px;
+        }
+        .what, .hell {
             border: 1px solid #333;
             padding: 4px;
-            float: left;
+            background: white;
+        }
+        .what {
+            cursor: pointer;
+        }
+        .what.active {
+            color: red;
+        }
+        .hell {
+            display: none;
         }
         .hell.active {
-            color: red;
+            display: block;
+            position: absolute;
+        }
+        .hell div {
+            cursor: pointer;
         }
     </style>
 
-    <div class="what">What</div>
-    <div class="hell">Hell</div>
+    <div class="what">
+        <content select="h1"></content>
+    </div>
+    <div class="hell">
+        <content></content>
+    </div>
 
 </template>
 
@@ -33,13 +54,25 @@
     
         host.appendChild(clone);
 
+        var what = host.querySelector('.what');
         var hell = host.querySelector('.hell');
-        host.querySelector('.what').onclick = function () {
-            if (/active/.test(hell.className)) {
-                hell.className = hell.className.replace(' active', '');
+        var toggle = function () {
+            if (what.classList.contains('active')) {
+                what.classList.remove('active')
+                hell.classList.remove('active')
+
             } else {
-                hell.className += ' active';
+                what.classList.add('active')
+                hell.classList.add('active')
+
+                hell.style.top = this.offsetTop + what.offsetHeight + 'px';
+                hell.style.left = this.offsetLeft + 'px';
             }
+        };
+
+        this.onclick = function (event) {
+            this.value = event.target.getAttribute('value');
+            toggle();
         };
     };
 
