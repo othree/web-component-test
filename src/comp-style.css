@@ -1,0 +1,31 @@
+
+@host {
+    * {
+        border: none;
+        display: inline-block;
+    }
+}
+h1 {
+    font-size: 16px;
+}
+.what, .hell {
+    border: 1px solid #333;
+    padding: 4px;
+    background: white;
+}
+.what {
+    cursor: pointer;
+}
+.what.active {
+    color: red;
+}
+.hell {
+    display: none;
+}
+.hell.active {
+    display: block;
+    position: absolute;
+}
+.hell div {
+    cursor: pointer;
+}
