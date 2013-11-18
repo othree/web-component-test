@@ -10,10 +10,11 @@ h1 {
 }
 .what, .hell {
     border: 1px solid #333;
-    padding: 4px;
     background: white;
+    border-radius: 4px;
 }
 .what {
+    padding: 6px;
     cursor: pointer;
 }
 .what.active {
