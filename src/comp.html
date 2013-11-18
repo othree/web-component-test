@@ -1,33 +1,48 @@
-<element name="wth">
-    <template class="wth">
-        <div class="what">What</div>
-        <div class="hell">Hell</div>
+<template class="wth" id="wth-template">
+    <style>
+        @host {
+            * {
+                border: none;
+            }
+        }
+        div {
+            border: 1px solid #333;
+            padding: 4px;
+            float: left;
+        }
+        .hell.active {
+            color: red;
+        }
+    </style>
 
-        <style scoped>
-            @host {
-                * {
-                    border: none;
-                }
-            }
-            div {
-                border: 1px solid #333;
-                padding: 4px;
-                float: left;
-            }
-            .hell.active {
-                color: red;
-            }
-        </style>
-    </template>
+    <div class="what">What</div>
+    <div class="hell">Hell</div>
 
-    <script>
+</template>
+
+<script>
+
+    var doc = document.currentScript.ownerDocument;
+
+    var wthProto = Object.create(HTMLElement.prototype);
+    var tpl = doc.getElementById('wth-template');
+
+    wthProto.createdCallback = function () {
+        var host = this.webkitCreateShadowRoot();
+        var clone = tpl.content.cloneNode(true);
+    
+        host.appendChild(clone);
+
         var hell = host.querySelector('.hell');
         host.querySelector('.what').onclick = function () {
             if (/active/.test(hell.className)) {
-                hell.className = '';
+                hell.className = hell.className.replace(' active', '');
             } else {
-                hell.className = 'active';
+                hell.className += ' active';
             }
         };
-    </script>
-</element>
+    };
+
+    document.register('x-wth', {prototype: wthProto});
+
+</script>

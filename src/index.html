@@ -2,25 +2,12 @@
 <html>
     <head>
         <title>Web Component Test</title>
-        <link rel="import" href="comp.html">
+        <link rel="import" href="comp.html" />
     </head>
     <body>
 
 
-        <div class="host-1"></div>
-        <div class="host-2"></div>
-        <div class="host-3"></div>
-    
-        <script>
-
-// Add the template to the Shadow DOM
-var tmpl = document.querySelector('template.wth');
-var host = document.querySelector('.host-1');
-var root = host.webkitCreateShadowRoot();
-// host.webkitCreateShadowRoot() in Safari and Chrome 30
-root.appendChild(tmpl.content.cloneNode(true));
-
-        </script>
+        <x-wth></x-wth>
 
     </body>
 </html>
