@@ -44,5 +44,5 @@ wthProto.createdCallback = function () {
     };
 };
 
-document.register('x-wth', {prototype: wthProto});
+document.register('x-wth', {prototype: wthProto, extends: 'div'});
 
