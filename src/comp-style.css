@@ -30,3 +30,7 @@ h1 {
 .hell div {
     cursor: pointer;
 }
+
+content::-webkit-distributed(div) {
+    color: blue;
+}
