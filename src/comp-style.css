@@ -1,9 +1,7 @@
 
-@host {
-    * {
-        border: none;
-        display: inline-block;
-    }
+:host {
+    border: none;
+    display: inline-block;
 }
 h1 {
     font-size: 16px;
@@ -31,6 +29,6 @@ h1 {
     cursor: pointer;
 }
 
-content::-webkit-distributed(div) {
+::content > div {
     color: blue;
 }
