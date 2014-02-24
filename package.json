@@ -1,0 +1,7 @@
+{
+  "name": "web-component-practice",
+  "devDependencies": {
+    "gulp": "*",
+    "ecstatic": "*"
+  }
+}

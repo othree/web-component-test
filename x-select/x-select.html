@@ -1,0 +1,55 @@
+<link rel="import" href="x-option/x-option.html" />
+<link rel="import" href="x-null-option/x-null-option.html" />
+<template id="x-select-template">
+    <style>
+      :host {
+        display: inline-block;
+        position: relative;
+      }
+      .desc {
+        position: relative;
+        border: 1px solid black;
+        padding: 4px 29px 4px 4px;
+        background: white;
+        cursor: pointer;
+        z-index: 2;
+      }
+      .desc:after {
+        font-size: 15px;
+        content: '⇪';
+        position: absolute;
+        right: 4px;
+        line-height: 20px;
+        -webkit-transform: rotate(180deg) translateY(0px);
+        -webkit-transition: -webkit-transform linear 0.3s;
+      }
+      :host(.expand) .desc:after {
+        -webkit-transform: rotate(-360deg) translateY(-3px);
+        -webkit-transition: -webkit-transform linear 0.3s;
+      }
+      .options {
+        display: block;
+        position: absolute;
+        background: white;
+        max-height: 0;
+        top: -webkit-calc(100% - 2px);
+        left: 0px;
+        border-bottom: 2px solid orange;
+        -webkit-transition: max-height ease 1s, top ease 1s;
+      }
+      :host(.expand) .options {
+        z-index: 1;
+        top: 100%;
+        max-height: 200px;
+        -webkit-transition: max-height ease 1s, top ease 1s;
+      }
+    </style>
+
+    <div class="desc"></div>
+    <div class="options">
+        <!-- <x-null-option>Unset</x-null-option> -->
+        <content></content>
+    </div>
+</template>
+
+<script src="x-select.js"></script>

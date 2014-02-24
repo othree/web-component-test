@@ -1,0 +1,35 @@
+<template id="x-option-template">
+    <style>
+      .option {
+        padding: 4px;
+        cursor: pointer;
+      }
+
+      .option {
+        visibility: hidden;
+        background: rgba(255,2555,255,0.5);
+        -webkit-transform: translateX(100vw);
+        -webkit-transition: -webkit-transform ease 1s, visibility linear 0s 1s;
+      }
+      :host(.top) .option {
+        -webkit-transform: translateY(-100vh);
+      }
+      :host(.bottom) .option {
+        -webkit-transform: translateY(100vh);
+      }
+      :host(.left) .option {
+        -webkit-transform: translateX(-100vw);
+      }
+      :host(.show) .option {
+        visibility: visible;
+        -webkit-transform: translate(0, 0);
+        -webkit-transition: -webkit-transform ease 1s, visibility linear 0s 0s;
+      }
+    </style>
+
+    <div class="option">
+        <content></content>
+    </div>
+</template>
+
+<script src="x-option.js"></script>
