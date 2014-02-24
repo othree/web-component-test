@@ -8,6 +8,15 @@
           :unresolved {
               visibility: hidden;
           }
+
+          x-select ^ x-null-option {
+              color: #069;
+              font-weight: bold;
+          }
+
+          x-option:hover, x-select ^ x-null-option:hover {
+              color: #69f;
+          }
         </style>
     </head>
     <body>
@@ -15,13 +24,13 @@
 
       <form action="/" type="GET">
         Hey:
-        <x-select data-label="~ Choose ~" name="choosed" value="6">
+        <x-select data-label="~ Choose ~" name="choosed">
           <x-option value="1">One</x-option>
           <x-option value="2" class="top">Two</x-option>
           <x-option value="3" class="left">Three</x-option>
           <x-option value="4" class="bottom">Four</x-option>
           <x-option value="5">Five</x-option>
-          <x-option value="5">SixSixSixSixSix</x-option>
+          <x-option value="6">SixSixSixSixSix</x-option>
         </x-select>
 
         <input type="submit"/>

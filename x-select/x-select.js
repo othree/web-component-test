@@ -43,18 +43,22 @@
         };
         defaultDesc();
 
+
+        var desccss = window.getComputedStyle(desc);
+        var descpadding = parseInt(desccss.paddingLeft, 10) + parseInt(desccss.paddingRight, 10);
+
         var maxw = function (nodes, base) {
             var w = base || 0;
             nodes.forEach(function (node) {
                 console.log(node.offsetWidth);
-                if (node.offsetWidth + 35 > w) {
-                    w = node.offsetWidth + 35;
+                if (node.offsetWidth + descpadding > w) {
+                    w = node.offsetWidth + descpadding;
                 }
             });
             return w;
         };
 
-        var w = Math.max(maxw(options, 0), host.clientWidth) + 'px';
+        var w = Math.max(maxw(options, 0), host.offsetWidth) + 'px';
         host.style.minWidth = w;
         root.querySelector('.options').style.minWidth = w;
 
@@ -94,6 +98,12 @@
             }, 0);
         };
 
+        Object.defineProperty(host, 'value', {
+            get: function () {
+                return input.value;
+            }
+        });
+
         host.onclick = function (event) {
             if (host.classList.contains('expand')) {
                 collapse();
@@ -104,7 +114,8 @@
             var target = event.srcElement;
             var value = target.getAttribute('value');
             if (target !== this && value) {
-                input.setAttribute('value', value);
+                input.value = value;
+                host.setAttribute('value', value);
                 desc.removeChild(desc.firstChild);
                 desc.appendChild(document.createTextNode(target.firstChild.nodeValue));
             } else if (event.data === 'unset') {
