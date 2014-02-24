@@ -31,24 +31,29 @@
         display: block;
         position: absolute;
         background: white;
-        max-height: 0;
+        height: 0;
         top: -webkit-calc(100% - 2px);
         left: 0px;
         border-bottom: 2px solid orange;
-        -webkit-transition: max-height ease 1s, top ease 1s;
+        overflow: hidden;
+        -webkit-transition: height ease 1s;
+      }
+      .options-wrapper {
+          position: absolute;
+          bottom: 0;
       }
       :host(.expand) .options {
         z-index: 1;
-        top: 100%;
-        max-height: 200px;
-        -webkit-transition: max-height ease 1s, top ease 1s;
+        -webkit-transition: height ease 1s;
       }
     </style>
 
     <div class="desc"></div>
     <div class="options">
+    <div class="options-wrapper">
         <!-- <x-null-option>Unset</x-null-option> -->
-        <content></content>
+        <content select="x-option"></content>
+    </div>
     </div>
 </template>
 

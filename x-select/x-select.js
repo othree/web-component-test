@@ -10,7 +10,7 @@
 
     xselectProto.createdCallback = function () {
         var host = this;
-        var options = host.querySelectorAll('x-option');
+        var options = Array.prototype.slice.call(host.querySelectorAll('x-option'));
 
         var name = host.getAttribute('name');
         var input = document.createElement('input');
@@ -27,8 +27,9 @@
 
         var unset = document.createElement('x-null-option');
         var opts = root.querySelector('.options');
+        var optsw = root.querySelector('.options-wrapper');
         unset.appendChild(document.createTextNode('Unset'));
-        opts.insertBefore(unset, opts.firstChild);
+        optsw.insertBefore(unset, optsw.firstChild);
 
         var label = host.getAttribute('data-label');
 
@@ -42,6 +43,18 @@
         };
         defaultDesc();
 
+        var maxw = function (nodes, base) {
+            var w = base || 0;
+            nodes.forEach(function (node) {
+                console.log(node.offsetWidth);
+                if (node.offsetWidth > w) {
+                    w = node.offsetWidth;
+                }
+            });
+            return w;
+        };
+
+        host.style.minWidth = Math.max(maxw(options, 0), host.clientWidth) + 'px';
         root.querySelector('.options').style.minWidth = host.offsetWidth + 'px';
 
         var e = function (nodes, type) {
@@ -54,15 +67,25 @@
             });
         };
 
+        var hsum = function (nodes, init) {
+            var h = init || 0;
+            nodes.forEach(function (node) {
+                h += node.offsetHeight;
+            });
+            return h;
+        };
 
         var collapse = function () {
             host.classList.remove('expand');
+            opts.style.height = '0px';
             e(options, 'collapse');
             e(unset, 'collapse');
             document.removeEventListener('click', collapse, false);
         };
         var expand = function () {
             host.classList.add('expand');
+            var h = hsum(options, unset.offsetHeight);
+            opts.style.height = h + 'px';
             e(options, 'expand');
             e(unset, 'expand');
             setTimeout(function () {
@@ -79,7 +102,6 @@
 
             var target = event.srcElement;
             var value = target.getAttribute('value');
-            console.log(event);
             if (target !== this && value) {
                 input.setAttribute('value', value);
                 desc.removeChild(desc.firstChild);

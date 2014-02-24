@@ -4,13 +4,13 @@
         display: inline-block;
         visibility: visible;
         opacity: 0;
-        -webkit-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg) translateX(-100px);
         -webkit-transition: -webkit-transform ease 1s, opacity ease 1s;
       }
       :host(.show) .option {
         opacity: 1;
         visibility: visible;
-        -webkit-transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg) translateX(0);
         -webkit-transition: -webkit-transform ease 1s, opacity ease 1s;
       }
     </style>
