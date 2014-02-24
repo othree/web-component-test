@@ -1,11 +1,11 @@
 /*jslint vars: true, browser: true */
-/*global HTMLInputElement: false, CustomEvent: false */
+/*global HTMLElement: false, CustomEvent: false */
 (function () {
     "use strict";
 
     var doc = document.currentScript.ownerDocument;
 
-    var xselectProto = Object.create(HTMLInputElement.prototype);
+    var xselectProto = Object.create(HTMLElement.prototype);
     var tpl = doc.getElementById('x-select-template');
 
     xselectProto.createdCallback = function () {
