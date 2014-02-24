@@ -50,7 +50,6 @@
         var maxw = function (nodes, base) {
             var w = base || 0;
             nodes.forEach(function (node) {
-                console.log(node.offsetWidth);
                 if (node.offsetWidth + descpadding > w) {
                     w = node.offsetWidth + descpadding;
                 }
