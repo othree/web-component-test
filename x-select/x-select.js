@@ -47,15 +47,16 @@
             var w = base || 0;
             nodes.forEach(function (node) {
                 console.log(node.offsetWidth);
-                if (node.offsetWidth > w) {
-                    w = node.offsetWidth;
+                if (node.offsetWidth + 35 > w) {
+                    w = node.offsetWidth + 35;
                 }
             });
             return w;
         };
 
-        host.style.minWidth = Math.max(maxw(options, 0), host.clientWidth) + 'px';
-        root.querySelector('.options').style.minWidth = host.offsetWidth + 'px';
+        var w = Math.max(maxw(options, 0), host.clientWidth) + 'px';
+        host.style.minWidth = w;
+        root.querySelector('.options').style.minWidth = w;
 
         var e = function (nodes, type) {
             if (!nodes.length || (nodes.length && nodes.length === 1)) {
