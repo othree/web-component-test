@@ -19,7 +19,7 @@
             input.setAttribute('name', name);
         }
 
-        host.appendChild(input);
+        host.insertBefore(input, host.firstChild);
 
         var root = this.webkitCreateShadowRoot();
         var clone = tpl.content.cloneNode(true);
