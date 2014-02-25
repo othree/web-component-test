@@ -1,0 +1,37 @@
+
+* Browser(Chrome) Setting
+
+* Shadow DOM
+  * <video>, <input type="range">
+  * <template>
+  * .createShadowRoot()
+  * :host
+
+* Custom Element
+  * .registerElement
+  * naming: x-custom-tag or unknowntag
+  * :unresolved
+  * lifecycle callback
+    * created
+    * attached
+    * detached
+    * attributeChanged
+
+* New Input Type
+  * hidden <input>
+  * Inherit HTMLInputElement not works now
+  * <input is="x-custom" /> hard to style
+
+* Custom Dropdown
+  * distribution and <content>
+  * :content
+
+* HTML import
+  * document.currentScript.ownerDocument
+
+* ^ and ^^
+
+* Polymer and polyfills
+
+!! Things changes all the time !!
+
