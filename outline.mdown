@@ -11,7 +11,7 @@
   * .registerElement
   * naming: x-custom-tag or unknowntag
   * :unresolved
-  * lifecycle callback
+  * lifecycle callback[[1][1]
     * created
     * attached
     * detached
@@ -35,3 +35,4 @@
 
 !! Things changes all the time !!
 
+[1]:https://www.w3.org/Bugs/Public/show_bug.cgi?id=24314
