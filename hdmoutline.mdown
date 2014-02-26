@@ -1,4 +1,9 @@
 
+* Standards
+  * [Shadow DOM](http://www.w3.org/TR/shadow-dom/)
+  * [Custom Element](http://www.w3.org/TR/custom-elements/)
+  * [HTML Imports](http://www.w3.org/TR/html-imports/)
+
 * Browser(Chrome) Setting
 
 * Shadow DOM
