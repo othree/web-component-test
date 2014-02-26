@@ -11,7 +11,7 @@
   * .registerElement
   * naming: x-custom-tag or unknowntag
   * :unresolved
-  * lifecycle callback[[1][1]
+  * lifecycle callback[[1][]]
     * created
     * attached
     * detached
