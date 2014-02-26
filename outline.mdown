@@ -2,8 +2,8 @@
 * Browser(Chrome) Setting
 
 * Shadow DOM
-  * <video>, <input type="range">
-  * <template>
+  * `<video>`, `<input type="range">`
+  * `<template>`
   * .createShadowRoot()
   * :host
 
@@ -18,12 +18,12 @@
     * attributeChanged
 
 * New Input Type
-  * hidden <input>
+  * hidden `<input>`
   * Inherit HTMLInputElement not works now
-  * <input is="x-custom" /> hard to style
+  * `<input is="x-custom" />` hard to style
 
 * Custom Dropdown
-  * distribution and <content>
+  * distribution and `<content>`
   * :content
 
 * HTML import
