@@ -8,7 +8,7 @@
 
 * Shadow DOM
   * `<video>`, `<input type="range">`
-  * `<template>`
+  * `<template>`[[2][]]
   * .createShadowRoot()
   * :host
 
@@ -41,3 +41,4 @@
 !! Things changes all the time !!
 
 [1]:https://www.w3.org/Bugs/Public/show_bug.cgi?id=24314
+[2]:https://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/templates/index.html
