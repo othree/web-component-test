@@ -38,6 +38,16 @@
 
 * Polymer and polyfills
 
+
+<ul>
+    <li><a href="http://www.html5rocks.com/en/tutorials/webcomponents/customelements/">Custom Element</a></li>
+    <li><a href="http://www.html5rocks.com/en/tutorials/webcomponents/imports/">HTML Imports</a></li>
+    <li><a href="http://www.html5rocks.com/en/tutorials/webcomponents/template/">Template</a></li>
+    <li><a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/">Shadow DOM 101</a></li>
+    <li><a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-201/">Shadow DOM 201</a>，特別要注意現在 pseudo 屬性已經沒了，改成 part 了。</li>
+    <li><a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-301/">Shadow DOM 301</a></li>
+</ul>
+
 !! Things changes all the time !!
 
 [1]:https://www.w3.org/Bugs/Public/show_bug.cgi?id=24314
